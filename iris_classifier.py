@@ -35,3 +35,12 @@ print(f'Accuracy {np.mean(y_pred == y_test)}')
 
 # Show scatter matrix
 # plt.show()
+# mglearn.plots.plot_knn_classification(n_neighbors=1)
+
+X, y = mglearn.datasets.make_forge()
+
+x_train, x_test, Y_train, Y_test = train_test_split(X, y, random_state=0)
+clf = KNeighborsClassifier(n_neighbors=3)
+clf.fit(x_train, Y_train)
+print(f'Predictions on test set {clf.predict(x_test)}')
+print(f'Predictions accuracy {clf.score(x_test, Y_test)}')
