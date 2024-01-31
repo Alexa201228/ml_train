@@ -1,2 +1,5 @@
 venv/
 cache/
+.idea/
+tmp
+.conda/
